@@ -1,0 +1,8 @@
+torch
+torchaudio
+numpy
+tqdm
+sounddevice
+soundfile
+scikit-learn
+onnx
