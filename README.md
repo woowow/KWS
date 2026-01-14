@@ -36,8 +36,6 @@ pip install -r requirements.txt
 
 kws-project/train/에서 실행
 
-*** * 바로 시작할거면 5), 6)으로 이동 ***
-
 ## 4) 옵션(인자) 설명
 
 ex)
@@ -71,7 +69,7 @@ KWS는 실제 환경에서 명령어가 아닌 말들을 명령어로 착각하�
 
 ### 4.3 --count
 
-각 라벨당 녹음 횟수입니다.
+각 라벨당 녹음 횟수
 
 ex) --labels next prev stop play --count 50
 → next 50 + prev 50 + stop 50 + play 50 (총 200개)
@@ -131,16 +129,16 @@ play: "이어 하기"
 ### ⚠️ 본인이 타이밍을 놓쳤다거나 잘 못 말했다면 재녹음하거나 반드시 경로로 이동해서 직접 삭제해주세요.
 ---
 
-## 6) 실행 명령어 (그대로 복붙해서 사용)
+## 6) 실행 명령어 (그대로 복붙하고 본인번호만 수정해서 사용)
 
 ### "다음 단계" 녹음
-python scripts/record_kws.py --spk spk02 --labels next --append --count 30
+python scripts/record_kws.py --spk spk본인번호 --labels next --append --count 30
 ### "이전 단계" 녹음
-python scripts/record_kws.py --spk spk02 --labels prev --append --count 30
+python scripts/record_kws.py --spk spk본인번호 --labels prev --append --count 30
 ### "일시 정지" 녹음
-python scripts/record_kws.py --spk spk02 --labels stop --append --count 30
+python scripts/record_kws.py --spk spk본인번호 --labels stop --append --count 30
 ### "이어 하기" 녹음
-python scripts/record_kws.py --spk spk02 --labels play --append --count 30
+python scripts/record_kws.py --spk spk본인번호 --labels play --append --count 30
 
 ### 아무 소리 녹음
 python scripts/record_kws.py --spk spk02 --labels unknown --append --count 70
