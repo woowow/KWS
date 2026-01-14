@@ -159,7 +159,7 @@ def main():
             if not args.no_beep:
                 beep()
 
-            print(f"🎙 RECORDING ({args.dur:.2f}s)... 지금 말해!", flush=True)
+            print(f"RECORDING ({args.dur:.2f}s)... 지금 말해라 김휘민. 치원이 프론트 화이팅. ", flush=True)
             audio = record_one(n_samples)
             print("⏹ DONE", flush=True)
 
