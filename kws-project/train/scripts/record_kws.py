@@ -72,10 +72,6 @@ def next_index_for_label(dir_path: str, label: str) -> int:
 
 
 def countdown(seconds: float = 1.2):
-    """
-    직관적인 카운트다운. 기본 총 1.2초 정도.
-    """
-    # 3..2..1을 빠르게
     steps = [3, 2, 1]
     per = seconds / len(steps)
     for s in steps:
@@ -141,7 +137,7 @@ def main():
         elif args.append:
             start_idx = next_index_for_label(label_dir, label)
         else:
-            start_idx = 0  # overwrite 가능
+            start_idx = 0
 
         if args.append and args.start is None:
             print(f"\n[Append] {label}: start from {start_idx:04d}")

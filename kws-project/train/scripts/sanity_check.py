@@ -11,7 +11,7 @@ def assert_nonempty(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--onnx", default="exports/kws.onnx")
-    ap.add_argument("--copy-to", default=None)  # ../web/public/models
+    ap.add_argument("--copy-to", default=None)
     args = ap.parse_args()
 
     size = assert_nonempty(args.onnx)

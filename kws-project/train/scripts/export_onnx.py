@@ -8,7 +8,7 @@ model = RawKWSNet(n_class=len(LABELS))
 model.load_state_dict(torch.load("checkpoints/best.pt", map_location="cpu"))
 model.eval()
 
-dummy = torch.randn(1, 16000)  # raw waveform 1 sec @ 16k
+dummy = torch.randn(1, 16000)
 out_path = "exports/kws.onnx"
 
 torch.onnx.export(
