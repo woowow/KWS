@@ -20,7 +20,7 @@
 
 ## 2) 설치 (requirements.txt)
 
-프로젝트 루트에서 아래 순서대로 실행하세요.
+프로젝트 루트에서 아래 순서대로 실행
 
 ### 2.1 가상환경
 
@@ -35,6 +35,8 @@ pip install -r requirements.txt
 ## 3) 실행 위치 / 기본 실행 형태
 
 kws-project/train/에서 실행
+
+**kws-demo <- 아님!!!!!**
 
 ## 4) 옵션(인자) 설명
 
