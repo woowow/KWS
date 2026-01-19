@@ -5,14 +5,15 @@ import soundfile as sf
 
 SR = 16000
 
-ALL_LABELS = ["next","prev","stop","play","unknown","silence"]
-PROMPT = {"next":"다음","prev":"이전","stop":"중지","play":"재생"}
+ALL_LABELS = ["next","prev","stop","play","wake","unknown","silence"]
+PROMPT = {"next":"다음 단계","prev":"이전 단계","stop":"일시 정지","play":"이어 하기","wake":"깨어나라, 봉인된 셰프여.."}
 
 DEFAULT_TARGET = {
     "next": 40,
     "prev": 40,
     "stop": 40,
     "play": 40,
+    "wake": 40,
     "unknown": 120,
     "silence": 60,
 }
@@ -119,7 +120,7 @@ def main():
     base = os.path.join(args.root, args.spk)
 
     print("\n[Guide]")
-    print(" next=다음, prev=이전, stop=중지, play=재생")
+    print(" next=다음, prev=이전, stop=중지, play=재생, wake=깨어나라.. 봉인된 셰프여.")
     print(" unknown=아무 말(짧은 문장/감탄사), silence=무음\n")
     print(f"[Config] spk={args.spk}, dur={args.dur}s, sr={SR}")
     print(f"[Config] append={args.append}, start={args.start}, cooldown={args.cooldown}s")
@@ -159,7 +160,7 @@ def main():
             if not args.no_beep:
                 beep()
 
-            print(f"RECORDING ({args.dur:.2f}s)... 지금 말해라 김휘민. 치원이 프론트 화이팅. ", flush=True)
+            print(f"RECORDING ({args.dur:.2f}s)... 깨어나라.. 봉인된 휘민이여... ", flush=True)
             audio = record_one(n_samples)
             print("⏹ DONE", flush=True)
 

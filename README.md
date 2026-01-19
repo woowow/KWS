@@ -141,6 +141,8 @@ python scripts/record_kws.py --spk spk본인번호 --labels prev --append --coun
 python scripts/record_kws.py --spk spk본인번호 --labels stop --append --count 30
 ### "이어 하기" 녹음
 python scripts/record_kws.py --spk spk본인번호 --labels play --append --count 30
+### "깨어나라, 봉인된 셰프여.." 녹음
+python scripts/record_kws.py --spk spk본인번호 --labels wake --append --count 50
 
 ### 아무 소리 녹음
 python scripts/record_kws.py --spk spk본인번호 --labels unknown --append --count 70

@@ -19,17 +19,15 @@ export default function VoiceKwsTest() {
   const lastFiredAtRef = useRef(0);
   const [log, setLog] = useState([]);
 
-  // ✅ 공식 튜토리얼과 동일한 포맷
   const porcupineKeyword = {
-    publicPath: "/porcupine/next.ppn", // public 폴더 기준 URL
-    label: "NEXT",                     // 감지 시 구분용 문자열
+    publicPath: "/porcupine/next.ppn", 
+    label: "NEXT",                     
   };
 
   const porcupineModel = {
     publicPath: "/porcupine/ko.pv",
   };
 
-  // ✅ init
   useEffect(() => {
     if (!ACCESS_KEY) return;
 
@@ -38,10 +36,8 @@ export default function VoiceKwsTest() {
     return () => {
       release();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // ✅ 감지 이벤트
   useEffect(() => {
     if (keywordDetection === null) return;
 
