@@ -1,6 +1,7 @@
 import os, glob, csv
 
 LABELS = ["next","prev","stop","play","unknown","silence"]
+#LABELS = ["next","prev","stop","play","unknown","silence","wake","quit"]
 
 def main():
     root = "data/raw"

@@ -1,0 +1,11 @@
+{
+  "train_spk": [
+    "spk02"
+  ],
+  "val_spk": [
+    "spk02"
+  ],
+  "test_spk": [
+    "spk04"
+  ]
+}

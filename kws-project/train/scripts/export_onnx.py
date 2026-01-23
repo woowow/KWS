@@ -1,6 +1,6 @@
 import os
 import torch
-from train_kws import RawKWSNet, LABELS
+from train_kws import RawKWSNet, LABELS, SR, DUR, NSAMP
 
 os.makedirs("exports", exist_ok=True)
 
@@ -8,7 +8,7 @@ model = RawKWSNet(n_class=len(LABELS))
 model.load_state_dict(torch.load("checkpoints/best.pt", map_location="cpu"))
 model.eval()
 
-dummy = torch.randn(1, 16000)
+dummy = torch.randn(1, NSAMP)
 out_path = "exports/kws.onnx"
 
 torch.onnx.export(

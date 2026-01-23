@@ -5,8 +5,8 @@ import soundfile as sf
 
 SR = 16000
 
-ALL_LABELS = ["next","prev","stop","play","wake","unknown","silence"]
-PROMPT = {"next":"다음 단계","prev":"이전 단계","stop":"일시 정지","play":"이어 하기","wake":"깨어나라, 봉인된 셰프여.."}
+ALL_LABELS = ["next","prev","stop","play","wake","quit","unknown","silence"]
+PROMPT = {"next":"다음 단계","prev":"이전 단계","stop":"일시 정지","play":"이어 하기","wake":"셰프님", "quit":"채팅 종료"}
 
 DEFAULT_TARGET = {
     "next": 40,
@@ -14,6 +14,7 @@ DEFAULT_TARGET = {
     "stop": 40,
     "play": 40,
     "wake": 40,
+    "quit": 40,
     "unknown": 120,
     "silence": 60,
 }
@@ -22,7 +23,6 @@ IDX_RE = re.compile(r"^(?P<label>[a-z]+)_(?P<idx>\d{4})\.wav$")
 
 
 def beep():
-    # Windows: terminal bell
     try:
         print("\a", end="", flush=True)
     except Exception:
@@ -120,7 +120,7 @@ def main():
     base = os.path.join(args.root, args.spk)
 
     print("\n[Guide]")
-    print(" next=다음, prev=이전, stop=중지, play=재생, wake=깨어나라.. 봉인된 셰프여.")
+    print(" next=다음, prev=이전, stop=중지, play=재생, wake=셰프님, quit=채팅 종료")
     print(" unknown=아무 말(짧은 문장/감탄사), silence=무음\n")
     print(f"[Config] spk={args.spk}, dur={args.dur}s, sr={SR}")
     print(f"[Config] append={args.append}, start={args.start}, cooldown={args.cooldown}s")
